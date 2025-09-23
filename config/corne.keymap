@@ -35,10 +35,10 @@
 
             display-name = "Base";
             bindings = <
-&kp ESCAPE  &kp Q        &kp W           &kp E             &kp R             &kp T        &kp Y    &kp U              &kp I            &kp O            &kp P                &kp LEFT_BRACKET
-&kp TAB     &HM LCTRL A  &HM LEFT_ALT S  &HM LEFT_GUI D    &HM LEFT_SHIFT F  &kp G        &kp H    &HM RIGHT_SHIFT J  &HM RIGHT_GUI K  &HM RIGHT_ALT L  &HM RCTRL SEMICOLON  &kp SQT
-&kp LSHFT   &kp Z        &kp X           &kp C             &kp V             &kp B        &kp N    &kp M              &kp COMMA        &kp DOT          &kp FSLH             &kp DELETE
-                                         &kp LEFT_CONTROL  &lt 1 ESCAPE      &kp SPACE    &kp RET  &lt 2 BACKSPACE    &kp LEFT_GUI
+&kp ESCAPE        &kp Q        &kp W           &kp E           &kp R             &kp T        &kp Y    &kp U              &kp I            &kp O            &kp P                &kp LEFT_BRACKET
+&kp TAB           &HM LCTRL A  &HM LEFT_ALT S  &HM LEFT_GUI D  &HM LEFT_SHIFT F  &kp G        &kp H    &HM RIGHT_SHIFT J  &HM RIGHT_GUI K  &HM RIGHT_ALT L  &HM RCTRL SEMICOLON  &kp SQT
+&kp LEFT_CONTROL  &kp Z        &kp X           &kp C           &kp V             &kp B        &kp N    &kp M              &kp COMMA        &kp DOT          &kp FSLH             &kp LEFT_ALT
+                                               &kp LEFT_SHIFT  &lt 1 ESCAPE      &kp SPACE    &kp RET  &lt 2 BACKSPACE    &kp LEFT_GUI
             >;
         };
 
@@ -51,9 +51,9 @@
 
             display-name = "Raise";
             bindings = <
-&kp TILDE  &none          &kp AT          &kp HASH          &kp DLLR              &kp PRCNT          &kp CARET     &kp AMPS               &kp KP_MULTIPLY    &none            &none             &kp GRAVE
-&kp TAB    &kp LESS_THAN  &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp EXCLAMATION    &kp QUESTION  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp GREATER_THAN  &kp SINGLE_QUOTE
-&kp LSHFT  &kp PERIOD     &kp COMMA       &kp COLON         &kp SEMICOLON         &kp UNDERSCORE     &kp MINUS     &kp PLUS               &kp EQUAL          &kp PIPE         &kp BACKSLASH     &kp DOUBLE_QUOTES
+&kp TILDE  &none          &kp AT          &kp HASH          &kp DLLR              &kp PRCNT          &kp CARET     &kp AMPS               &kp KP_MULTIPLY    &kp BACKSPACE    &kp DELETE        &kp GRAVE
+&trans     &kp LESS_THAN  &kp LEFT_BRACE  &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp EXCLAMATION    &kp QUESTION  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp GREATER_THAN  &kp SINGLE_QUOTE
+&trans     &kp PERIOD     &kp COMMA       &kp COLON         &kp SEMICOLON         &kp UNDERSCORE     &kp MINUS     &kp PLUS               &kp EQUAL          &kp PIPE         &kp BACKSLASH     &kp DOUBLE_QUOTES
                                           &trans            &trans                &kp SPACE          &kp RET       &trans                 &trans
             >;
         };
@@ -68,7 +68,7 @@
             display-name = "Lower";
             bindings = <
 &kp PRINTSCREEN  &kp N1        &kp N2        &kp N3      &kp N4    &kp N5        &kp N6    &kp N7    &kp N8  &kp N9     &kp N0      &kp BSPC
-&kp TAB          &bt BT_SEL 0  &bt BT_SEL 1  &kp C_PREV  &kp C_PP  &kp C_NEXT    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp K_MUTE  &bt BT_CLR
+&trans           &bt BT_SEL 0  &bt BT_SEL 1  &kp C_PREV  &kp C_PP  &kp C_NEXT    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp K_MUTE  &bt BT_CLR
 &kp F1           &kp F2        &kp F3        &kp F4      &kp F5    &kp F6        &kp F7    &kp F8    &kp F9  &kp F10    &kp F11     &kp F12
                                              &trans      &trans    &kp SPACE     &kp RET   &trans    &trans
             >;
