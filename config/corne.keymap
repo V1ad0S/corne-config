@@ -86,6 +86,18 @@
             bindings = <&kp RIGHT_CONTROL>;
             key-positions = <32 33>;
         };
+
+        switch_colemak_qwerty {
+            bindings = <&to 5>;
+            key-positions = <35 24 34 25>;
+            layers = <0>;
+        };
+
+        switch_qwerty_colemak {
+            bindings = <&to 0>;
+            key-positions = <35 24 34 25>;
+            layers = <5>;
+        };
     };
 };
 
@@ -101,10 +113,10 @@
             //                   | OPT |-SYM-| SPC | | RET |-NUM-| CMD |
 
             bindings = <
-&kp ESCAPE        &kp Q  &kp W  &kp F           &kp P  &kp B        &kp J    &kp L  &kp U          &kp Y    &none     &none
-&kp TAB           &kp A  &kp R  &kp S           &kp T  &kp G        &kp M    &kp N  &kp E          &kp I    &kp O     &none
-&kp LEFT_CONTROL  &kp Z  &kp X  &kp C           &kp D  &kp V        &kp K    &kp H  &kp COMMA      &kp DOT  &kp BSPC  &kp RIGHT_ALT
-                                &kp LEFT_SHIFT  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RIGHT_GUI
+&kp ESCAPE        &kp Q  &kp W  &kp F           &kp P  &kp B        &kp J    &kp L            &kp U          &kp Y    &none     &none
+&kp TAB           &kp A  &kp R  &kp S           &kp T  &kp G        &kp M    &kp N            &kp E          &kp I    &kp O     &none
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C           &kp D  &kp V        &kp K    &kp H            &kp COMMA      &kp DOT  &kp BSPC  &kp RIGHT_ALT
+                                &kp LEFT_SHIFT  &mo 1  &kp SPACE    &kp RET  &lt 2 BACKSPACE  &kp RIGHT_GUI
             >;
         };
 
@@ -165,6 +177,15 @@
 &trans  &none  &none  &none   &none  &none     &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
 &trans  &none  &none  &none   &none  &none     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none   &trans
                       &trans  &none  &trans    &trans    &trans     &trans
+            >;
+        };
+
+        qwerty_layer {
+            bindings = <
+&kp ESC    &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y    &kp U            &kp I      &kp O    &kp P          &kp LEFT_BRACKET
+&kp TAB    &kp A  &kp S  &kp D      &kp F  &kp G        &kp H    &kp J            &kp K      &kp L    &kp SEMICOLON  &kp SINGLE_QUOTE
+&kp LCTRL  &kp Z  &kp X  &kp C      &kp V  &kp B        &kp N    &kp M            &kp COMMA  &kp DOT  &kp SLASH      &kp RALT
+                         &kp LSHFT  &mo 1  &kp SPACE    &kp RET  &lt 2 BACKSPACE  &kp RGUI
             >;
         };
     };
