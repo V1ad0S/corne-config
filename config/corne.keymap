@@ -88,15 +88,9 @@
         };
 
         switch_colemak_qwerty {
-            bindings = <&to 5>;
+            bindings = <&tog 5>;
             key-positions = <35 24 34 25>;
-            layers = <0>;
-        };
-
-        switch_qwerty_colemak {
-            bindings = <&to 0>;
-            key-positions = <35 24 34 25>;
-            layers = <5>;
+            layers = <0 5>;
         };
     };
 };
