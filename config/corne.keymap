@@ -8,12 +8,13 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define CMK 0
-#define SYM 1
-#define NUM 2
-#define FUN 3
-#define NAV 4
-#define DANGER 5
-#define LCK 6
+#define QWE 1
+#define SYM 2
+#define NUM 3
+#define FUN 4
+#define NAV 5
+
+#define ALL_LAYERS 0 1 2 3 4 5
 
 &caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE>; };
 
@@ -33,65 +34,60 @@
         compatible = "zmk,combos";
 
         combo_capsword {
-            layers = <0 1 2 3 4 5>;
+            layers = <ALL_LAYERS>;
             timeout-ms = <100>;
-
-            // G + M
 
             key-positions = <17 18>;
             bindings = <&caps_word>;
         };
 
-        combo_left_ctrl {
-            layers = <0 1 2 3 4 5>;
-            timeout-ms = <50>;
-
-            // Z + X
-
-            key-positions = <26 27>;
-            bindings = <&sk LCTRL>;
-        };
-
         combo_opt {
-            layers = <0 1 2 3 4 5>;
+            layers = <ALL_LAYERS>;
             timeout-ms = <50>;
-
-            // SYM + SPC = CMD
 
             key-positions = <37 38>;
             bindings = <&sk LCMD>;
         };
 
         combo_cmd {
-            layers = <0 1 2 3 4 5>;
+            layers = <ALL_LAYERS>;
             timeout-ms = <50>;
-
-            // NUM + ENT = OPT
 
             key-positions = <39 40>;
             bindings = <&sk LALT>;
         };
 
         combo_shift {
-            layers = <0 1 2 3 4 5>;
-            timeout-ms = <80>;
-
-            // SPC + ENT = BSPC
+            layers = <ALL_LAYERS>;
+            timeout-ms = <50>;
 
             key-positions = <38 39>;
-            bindings = <&kp LEFT_SHIFT>;
+            bindings = <&sk LEFT_SHIFT>;
         };
 
+        combo_left_ctrl {
+            layers = <ALL_LAYERS>;
+            timeout-ms = <50>;
+
+            key-positions = <26 27>;
+            bindings = <&sk LCTRL>;
+        };
+
+
         combo_right_ctrl {
-            bindings = <&kp RIGHT_CONTROL>;
+            layers = <ALL_LAYERS>;
+            timeout-ms = <50>;
+
+            bindings = <&sk RIGHT_CONTROL>;
             key-positions = <32 33>;
-            layers = <0 2 1 3 4 5>;
         };
 
         switch_colemak_qwerty {
-            bindings = <&tog 5>;
-            key-positions = <35 24 34 25>;
-            layers = <0 5>;
+            layers = <CMK QWE>;
+            timeout-ms = <50>;
+
+            bindings = <&tog QWE>;
+            key-positions = <24 25 34 35>;
         };
     };
 };
@@ -101,57 +97,42 @@
         compatible = "zmk,keymap";
 
         colemak_layer {
-            // ---------------------------------------------------------------------------
-            // |     |  Q  |  W  |  F  |  P  |  B  | |  J  |  L  |  U  |  Y  |     |     |
-            // |     |  A  |  R  |  S  |  T  |  G  | |  M  |  N  |  E  |  I  |  O  |     |
-            // |     |  Z  |  X  |  C  |  D  |  V  | |  K  |  H  |  ,  |  .  |BKSPC|     |
-            //                   | OPT |-SYM-| SPC | | RET |-NUM-| CMD |
-
             bindings = <
 &kp ESCAPE        &kp Q  &kp W  &kp F           &kp P  &kp B        &kp J    &kp L            &kp U          &kp Y    &none     &none
 &kp TAB           &kp A  &kp R  &kp S           &kp T  &kp G        &kp M    &kp N            &kp E          &kp I    &kp O     &none
 &kp LEFT_CONTROL  &kp Z  &kp X  &kp C           &kp D  &kp V        &kp K    &kp H            &kp COMMA      &kp DOT  &kp BSPC  &kp RIGHT_ALT
-                                &kp LEFT_SHIFT  &mo 1  &kp SPACE    &kp RET  &lt 2 BACKSPACE  &kp RIGHT_GUI
+                                &kp LEFT_SHIFT  &mo SYM  &kp SPACE    &kp RET  &lt NUM BACKSPACE  &kp RIGHT_GUI
+            >;
+        };
+
+        qwerty_layer {
+            bindings = <
+&kp ESCAPE        &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y    &kp U            &kp I      &kp O    &kp P          &kp LEFT_BRACKET
+&kp TAB           &kp A  &kp S  &kp D      &kp F  &kp G        &kp H    &kp J            &kp K      &kp L    &kp SEMICOLON  &kp SINGLE_QUOTE
+&kp LEFT_CONTROL  &kp Z  &kp X  &kp C      &kp V  &kp B        &kp N    &kp M            &kp COMMA  &kp DOT  &kp SLASH      &kp RALT
+                         &kp LSHFT  &mo SYM  &kp SPACE    &kp RET  &lt NUM BACKSPACE  &kp RGUI
             >;
         };
 
         symbol_layer {
-            // ---------------------------------------------------------------------------
-            // |     |     |  \  |  %  |  $  |     | |     |  ^  |  {  |  }  |     |     |
-            // |     |  *  |  (  |  )  |  :  |     | |     |  '  |  [  |  ]  |  ;  |     |
-            // |     |-FUN-|  `  |  @  |  &  |     | |     |  #  |  <  |  >  | DEL |     |
-            //                   | OPT |_SYM_| SPACE | | RET | ESC | CMD |
-
             bindings = <
 &none  &none     &kp BSLH  &kp PRCNT  &kp DLLR   &none        &none      &kp CARET  &kp LBRC  &kp RBRC  &none     &none
 &none  &kp STAR  &kp LPAR  &kp RPAR   &kp COLON  &none        &kp GRAVE  &kp SQT    &kp LBKT  &kp RBKT  &kp SEMI  &none
-&none  &mo 3     &none     &kp AT     &kp AMPS   &none        &none      &kp HASH   &kp LT    &kp GT    &kp DEL   &none
+&none  &mo FUN     &none     &kp AT     &kp AMPS   &none        &none      &kp HASH   &kp LT    &kp GT    &kp DEL   &none
                            &trans     &trans     &kp SPACE    &kp RET    &kp ESC    &trans
             >;
         };
 
         number_layer {
-            // ---------------------------------------------------------------------------
-            // |     |     |  4  |  5  |  6  |     | |     |  |  |  -  |  /  |     |     |
-            // |     |  .  |  1  |  2  |  3  |     | |     |  "  |  _  |  =  |-NAV-|     |
-            // |     |  ~  |  7  |  8  |  9  |     | |     |  +  |  ?  |  !  | DEL |     |
-            //                   | OPT |  0  | SPC | | RET |_NUM_| CMD |
-
             bindings = <
 &trans  &kp BSPC   &kp N4  &kp N5  &kp N6  &none        &none    &kp PIPE  &kp MINUS  &kp FSLH   &none    &trans
-&trans  &kp DOT    &kp N1  &kp N2  &kp N3  &none        &none    &kp DQT   &kp UNDER  &kp EQUAL  &mo 4    &trans
+&trans  &kp DOT    &kp N1  &kp N2  &kp N3  &none        &none    &kp DQT   &kp UNDER  &kp EQUAL  &mo NAV    &trans
 &trans  &kp TILDE  &kp N7  &kp N8  &kp N9  &none        &none    &kp PLUS  &kp QMARK  &kp EXCL   &kp DEL  &trans
                            &trans  &kp N0  &kp SPACE    &kp RET  &trans    &trans
             >;
         };
 
         fun_layer {
-            // ---------------------------------------------------------------------------
-            // |     |     | F 6 | F 5 | F 4 | F10 | | BT0 | BT1 | USB | BLE |     |     |
-            // |     |CAPSL| F 3 | F 2 | F 1 | F11 | |VMUTE|VOLDN|VOLUP|BRIDN|BRIUP|     |
-            // |     |_FUN_| F 9 | F 8 | F 7 | F12 | | <!> | <!> |SLEEP|-!!!-|<LCK>|
-            //                   | OPT |_SYM_| SPC | | RET |<LCK>| CMD |
-
             bindings = <
 &trans  &none     &kp F6  &kp F5  &kp F4  &kp F10    &none       &none         &none         &none  &none  &trans
 &trans  &kp CAPS  &kp F3  &kp F2  &kp F1  &kp F11    &kp K_MUTE  &kp C_VOL_DN  &kp C_VOL_UP  &none  &none  &trans
@@ -161,26 +142,11 @@
         };
 
         nav_layer {
-            // ---------------------------------------------------------------------------
-            // |     |     |     |     |     |     | |     |     |     |     |     |     |
-            // |     | TOG | EFF | BRI | BRD |     | | LFT | DWN | U P |RIGHT|_NAV_|     |
-            // |     | SAD |     |     |     |     | | HOM |PG_DN|PG_UP| END |     |     |
-            //                   | OPT |     | SPC | | RET |_NUM_| CMD |
-
             bindings = <
 &trans  &none  &none  &none   &none  &none     &none     &none      &none      &none      &none   &trans
 &trans  &none  &none  &none   &none  &none     &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans  &trans
 &trans  &none  &none  &none   &none  &none     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none   &trans
                       &trans  &none  &trans    &trans    &trans     &trans
-            >;
-        };
-
-        qwerty_layer {
-            bindings = <
-&kp ESC    &kp Q  &kp W  &kp E      &kp R  &kp T        &kp Y    &kp U            &kp I      &kp O    &kp P          &kp LEFT_BRACKET
-&kp TAB    &kp A  &kp S  &kp D      &kp F  &kp G        &kp H    &kp J            &kp K      &kp L    &kp SEMICOLON  &kp SINGLE_QUOTE
-&kp LCTRL  &kp Z  &kp X  &kp C      &kp V  &kp B        &kp N    &kp M            &kp COMMA  &kp DOT  &kp SLASH      &kp RALT
-                         &kp LSHFT  &mo 1  &kp SPACE    &kp RET  &lt 2 BACKSPACE  &kp RGUI
             >;
         };
     };
