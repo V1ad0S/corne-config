@@ -1,2 +1,100 @@
+/*
+           Left Half                         Right Half
+┌────┬────┬────┬────┬────┬────┐   ┌────┬────┬────┬────┬────┬────┐
+| 00 | 01 | 02 | 03 | 04 | 05 |   | 06 | 07 | 08 | 09 | 10 | 11 |
+├────┼────┼────┼────┼────┼────┤   ├────┼────┼────┼────┼────┼────┤
+| 12 | 13 | 14 | 15 | 16 | 17 |   | 18 | 19 | 20 | 21 | 22 | 23 |
+├────┼────┼────┼────┼────┼────┤   ├────┼────┼────┼────┼────┼────┤
+| 24 | 25 | 26 | 27 | 28 | 29 |   | 30 | 31 | 32 | 33 | 34 | 35 |
+└────┴────┴────┴────┴────┴────┘   └────┴────┴────┴────┴────┴────┘
+               ┌────┬────┬────┐   ┌────┬────┬────┐
+               | 36 | 37 | 38 |   | 39 | 40 | 41 |
+               └────┴────┴────┘   └────┴────┴────┘
+*/
+
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        combo_capsword {
+            layers = <ALL_LAYERS>;
+            timeout-ms = <100>;
+
+            key-positions = <38 39>;
+            bindings = <&caps_word>;
+        };
+
+        combo_l_ctrl {
+            layers = <ALL_LAYERS>;
+            timeout-ms = <50>;
+
+            key-positions = <13 14>;
+            bindings = <&sk LCTRL>;
+        };
+
+        combo_l_shift {
+            layers = <ALL_LAYERS>;
+            timeout-ms = <50>;
+
+            key-positions = <15 16>;
+            bindings = <&sk LSHIFT>;
+        };
+
+        combo_l_meta {
+            layers = <ALL_LAYERS>;
+            timeout-ms = <50>;
+
+            key-positions = <26 27>;
+            bindings = <&sk LALT>;
+        };
+
+        combo_l_super {
+            layers = <ALL_LAYERS>;
+            timeout-ms = <50>;
+
+            key-positions = <2 3>;
+            bindings = <&sk LGUI>;
+        };
+
+        combo_r_ctrl {
+            layers = <ALL_LAYERS>;
+            timeout-ms = <50>;
+
+            key-positions = <21 22>;
+            bindings = <&sk RCTRL>;
+        };
+
+        combo_r_shift {
+            layers = <ALL_LAYERS>;
+            timeout-ms = <50>;
+
+            key-positions = <19 20>;
+            bindings = <&sk RSHIFT>;
+        };
+
+        combo_r_meta {
+            layers = <ALL_LAYERS>;
+            timeout-ms = <50>;
+
+            key-positions = <32 33>;
+            bindings = <&sk RALT>;
+        };
+
+        combo_r_super {
+            layers = <ALL_LAYERS>;
+            timeout-ms = <50>;
+
+            key-positions = <8 9>;
+            bindings = <&sk RGUI>;
+        };
+
+
+        /* switch_colemak_qwerty { */
+        /*     layers = <CMK QWE>; */
+        /*     timeout-ms = <50>; */
+        /**/
+        /*     bindings = <&tog QWE>; */
+        /*     key-positions = <24 25 34 35>; */
+        /* }; */
+    };
 };
