@@ -29,7 +29,7 @@
             timeout-ms = <50>;
 
             key-positions = <13 14>;
-            bindings = <&sk LCTRL>;
+            bindings = <&skq LCTRL>;
         };
 
         combo_l_shift {
@@ -37,7 +37,7 @@
             timeout-ms = <50>;
 
             key-positions = <15 16>;
-            bindings = <&sk LSHIFT>;
+            bindings = <&skq LSHIFT>;
         };
 
         combo_l_meta {
@@ -45,7 +45,7 @@
             timeout-ms = <50>;
 
             key-positions = <26 27>;
-            bindings = <&sk LALT>;
+            bindings = <&skq LALT>;
         };
 
         combo_l_super {
@@ -53,7 +53,7 @@
             timeout-ms = <50>;
 
             key-positions = <2 3>;
-            bindings = <&sk LGUI>;
+            bindings = <&skq LGUI>;
         };
 
         combo_r_ctrl {
@@ -61,7 +61,7 @@
             timeout-ms = <50>;
 
             key-positions = <21 22>;
-            bindings = <&sk RCTRL>;
+            bindings = <&skq RCTRL>;
         };
 
         combo_r_shift {
@@ -69,7 +69,7 @@
             timeout-ms = <50>;
 
             key-positions = <19 20>;
-            bindings = <&sk RSHIFT>;
+            bindings = <&skq RSHIFT>;
         };
 
         combo_r_meta {
@@ -77,7 +77,7 @@
             timeout-ms = <50>;
 
             key-positions = <32 33>;
-            bindings = <&sk RALT>;
+            bindings = <&skq RALT>;
         };
 
         combo_r_super {
@@ -85,7 +85,7 @@
             timeout-ms = <50>;
 
             key-positions = <8 9>;
-            bindings = <&sk RGUI>;
+            bindings = <&skq RGUI>;
         };
 
 
