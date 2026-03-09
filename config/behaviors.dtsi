@@ -1,8 +1,8 @@
 / {
     behaviors {
-        HM: HM {
+        HM: home_row_mod {
             compatible = "zmk,behavior-hold-tap";
-            label = "HM";
+            label = "HOME_ROW_MODE";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -10,6 +10,14 @@
             quick-tap-ms = <175>;
             flavor = "tap-preferred";
             hold-trigger-on-release;
+        };
+        skq: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            label = "STICKY_KEY_QUICK_RELEASE";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <1000>;
+            quick-release;
         };
     };
 };
