@@ -33,10 +33,10 @@
         qwerty_layer {
             display-name = "QWERTY";
             bindings = <
-&kp ESCAPE			&kp Q	&kp W	&kp E			&kp R		&kp T				&kp Y	&kp U		&kp I			&kp O	&kp P			&kp LEFT_BRACKET
-&kp TAB				&kp A	&kp S	&kp D			&kp F		&kp G				&kp H	&kp J		&kp K			&kp L	&kp SEMICOLON	&kp DOUBLE_QUOTES
-&kp LEFT_CONTROL	&kp Z	&kp X	&kp C			&kp V		&kp B				&kp N	&kp M		&kp COMMA		&kp DOT	&kp FSLH		&kp LEFT_ALT
-									&kp LEFT_GUI	&mo L_SYM	&kp SPACE			&kp RET	&mo L_NUM	&kp BACKSPACE
+&kp ESCAPE	&kp Q	&kp W	&kp E		&kp R		&kp T				&kp Y	&kp U				&kp I		&kp O	&kp P			&kp LEFT_BRACKET
+&kp TAB		&kp A	&kp S	&kp D		&kp F		&kp G				&kp H	&kp J				&kp K		&kp L	&kp SEMICOLON	&kp DOUBLE_QUOTES
+&kp LCTRL	&kp Z	&kp X	&kp C		&kp V		&kp B				&kp N	&kp M				&kp COMMA	&kp DOT	&kp FSLH		&kp RALT
+							&kp LSHIFT	&mo L_SYM	&kp SPACE			&kp RET	&lt L_NUM BACKSPACE	&kp RGUI
             >;
         };
 
