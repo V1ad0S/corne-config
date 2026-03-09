@@ -25,11 +25,11 @@
         };
 
         switch_colemak_qwerty {
-            layers = <CMK QWE>;
+            layers = <L_QWE L_CMK>;
             timeout-ms = <50>;
 
             key-positions = <24 25 34 35>;
-            bindings = <&tog CMK>;
+            bindings = <&tog L_CMK>;
         };
     };
 };
