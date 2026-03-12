@@ -11,7 +11,7 @@ build-matrix:
         echo $build_board | yq --output-format=json
     done
 
-build: clean
+build target='all': clean
     #!/usr/bin/env bash
     readarray build_matrix < <(yq --output-format=json --indent=0 '.include[]' {{build_settings}} )
     for build_item in "${build_matrix[@]}"; do
@@ -24,6 +24,11 @@ build: clean
         name=$(echo "$build_item" | yq '.name // .shield' -)
 
         name=${name//[[:space:]]/_}
+
+        if [[ "{{target}}" != "all" ]] && [[ "$name" != "{{target}}" ]]; then
+            echo 'skip'
+            continue
+        fi
 
         just _build-board "${name}" "${board}" "${shield}" "${snippet}" "${modules}"
         just _export-build "${name}"
