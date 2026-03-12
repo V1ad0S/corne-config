@@ -1,8 +1,9 @@
-#include "corne_transform.dtsi"
+#include "../corne_bare/corne_transform.dtsi"
 
 / {
     chosen {
         zmk,kscan = &mock_kscan;
+        zmk,matrix_transform = &default_transform;
     };
 
     mock_kscan: mock_kscan {

@@ -3,7 +3,7 @@ include:
   # dongle
   - board: xiao_ble//zmk
     name: prospector_dongle
-    shield: corne_dongle prospector_adapter
+    shield: dongle prospector_adapter
     modules: [prospector-zmk-module]
 
   - board: xiao_ble//zmk
@@ -12,10 +12,10 @@ include:
 
   # peripherals
   - board: nice_nano//zmk
-    shield: corne_peripheral_left
+    shield: corne_bare_left
 
   - board: nice_nano//zmk
-    shield: corne_peripheral_right
+    shield: corne_bare_right
 
   - board: nice_nano//zmk
     name: nicenano_reset
